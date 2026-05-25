@@ -1,19 +1,16 @@
-module.exports = {
-  root: true,
-  plugins: ['vite-plugin-react'],
+import { defineConfig } from 'vite';
+
+export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
     },
   },
   server: {
-    port: 3000,
+    port: 5173,
     open: true,
   },
   build: {
     outDir: 'dist',
-  },
-  define: {
-    'process.env': {},
-  },
-};
+  }
+});

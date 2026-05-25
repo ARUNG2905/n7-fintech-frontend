@@ -16,4 +16,8 @@
   .bg-primary-glow {
     background: radial-gradient(circle, rgba(13,100,255,0.2) 0%, rgba(4,7,10,0) 70%);
   }
+  .mask-radial-faded {
+    mask-image: radial-gradient(circle, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);
+  }
 }
