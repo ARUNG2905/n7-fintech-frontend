@@ -1,47 +1,19 @@
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #1a202c; /* Dark background */
-  color: #f7fafc; /* Light text */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
-
-p {
-  margin: 0;
-}
-
-a {
-  color: #63b3ed; /* Light blue for links */
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.section {
-  padding: 2rem 0;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  background-color: #2b6cb0; /* Blue background */
-  color: white;
-  text-align: center;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #3182ce; /* Lighter blue on hover */
+@layer utilities {
+  .bg-primary-solid {
+    background-color: #0D64FF;
+  }
+  .bg-primary-glow {
+    background: radial-gradient(circle, rgba(13,100,255,0.2) 0%, rgba(4,7,10,0) 70%);
+  }
 }

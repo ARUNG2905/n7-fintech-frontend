@@ -1,12 +1,22 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        primary: '#4A90E2', // Example primary color
-        secondary: '#D9E3F0', // Example secondary color
-        darkBackground: '#1A202C', // Dark background for fintech theme
-        lightText: '#F7FAFC', // Light text color
+        background: '#04070A',
+        primary: {
+          DEFAULT: '#0D64FF',
+          hover: '#0A50CC'
+        },
+        text: {
+          DEFAULT: '#ffffff',
+          muted: '#8A97A8'
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
       },
     },
   },
