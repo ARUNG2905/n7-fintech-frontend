@@ -3,6 +3,7 @@ import './styles/tailwind.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import FeaturesSection from './components/FeaturesSection';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Navbar />
         <main className="flex-1">
           <Hero />
+          <FeaturesSection />
         </main>
       </div>
     </Router>
