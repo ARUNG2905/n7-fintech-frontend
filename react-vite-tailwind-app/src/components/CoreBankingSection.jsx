@@ -1,118 +1,443 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Button from './ui/Button';
 
-// Importing the actual mapped assets from the index
-import { 
-  FloatingDashboardCard, 
-  TransactionHistoryScreen, 
-  VectorGridDecoration 
-} from '../assets';
+/* ─────────────────────────────────────────────────────────────────
+   SECTION — "A complete cloud-based core banking."  (Frame 12)
 
+   Figma Specs:
+   • Frame 12: w:1440 h:619, bg:#000D12
+   • "CB7" watermark: absolute, left:-163.31px top:-2.25px,
+       font:Archivo 500 572.632px, opacity:0.5
+   • Frame 90 (right mockup): absolute, left:927px top:80.17px,
+       w:651.67 h:461.42
+     – Rectangle 78 (body): 651.67×431.99, border-radius: 15.77px 15.77px 0 0
+     – Rectangle 80 (base): 765.94×30.3, centered, top:431.12px,
+         border-radius: 5.26px 5.26px 14.72px 14.72px
+     – Mask group (screen): 631.15×408.8, left:10.22 top:7.57
+     – image 3 (AML dash): 631.15×483.14, left:10.22 top:7.57, opacity:0.8
+   • Frame 93 (left col): absolute left:80px top:156.88px w:607.83
+     – Heading: Archivo 400 53px lh:120% ls:-0.01em #E9F4F9
+     – Subtitle: Archivo 400 16px lh:130% #E9F4F9 opacity:0.8 w:327.19
+     – Button: 210×49 gradient border-radius:10px, Chivo Mono 15px uppercase
+     – LearnMore: Chivo Mono 14px uppercase #00B4FD + 32.58px underline
+   ───────────────────────────────────────────────────────────────── */
+
+/* ── Learn More link (Component 3) ── */
+const LearnMore = () => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      gap: '3px',
+      width: '102.57px',
+    }}
+  >
+    {/* Frame 59 — row: text + arrow */}
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '5px',
+        width: '102.57px',
+        height: '18px',
+      }}
+    >
+      <span
+        style={{
+          fontFamily: 'Chivo Mono, monospace',
+          fontWeight: 400,
+          fontSize: '14px',
+          lineHeight: '130%',
+          textTransform: 'uppercase',
+          color: '#00B4FD',
+          cursor: 'pointer',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        learn more
+      </span>
+      {/* Arrow → (Figma: rotate(-180deg) effectively = → direction) */}
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path
+          d="M2 7H12M12 7L8 3M12 7L8 11"
+          stroke="#00B4FD"
+          strokeWidth="0.94"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+    {/* Line 1 — Figma: width:32.58px, border:1px solid #00B4FD */}
+    <div
+      style={{
+        width: '32.58px',
+        height: '0px',
+        borderBottom: '1px solid #00B4FD',
+      }}
+    />
+  </div>
+);
+
+/* ── Laptop / Screen Mockup (Frame 90) ── */
+const LaptopMockup = () => (
+  <div
+    style={{
+      position: 'relative',
+      width: '651.67px',
+      height: '461.42px',
+    }}
+  >
+    {/* Rectangle 78 — laptop screen body (Sibling) */}
+    <div
+      style={{
+        position: 'absolute',
+        width: '651.67px',
+        height: '431.99px',
+        left: '0px',
+        top: '0px',
+        background: 'linear-gradient(106.53deg, #00B4FD -5.68%, #003ACE 86.98%)',
+        opacity: 0.5,
+        borderRadius: '15.7661px 15.7661px 0px 0px',
+        border: '1px solid #00B4FD',
+      }}
+    />
+
+    {/* Mask group / screen inner content */}
+    <div
+      style={{
+        position: 'absolute',
+        width: '631.15px',
+        height: '408.8px',
+        left: '10.22px',
+        top: '7.57px',
+      }}
+    >
+      {/* Rectangle 79 — screen background */}
+      <div
+        style={{
+          position: 'absolute',
+          width: '631.15px',
+          height: '408.8px',
+          left: '0px',
+          top: '0px',
+          background: '#D9D9D9',
+          borderRadius: '5.25537px 5.25537px 0px 0px',
+          overflow: 'hidden',
+        }}
+      >
+        {/* image 3 — AML Dashboard */}
+        <img
+          src="/aml-dashboard.png"
+          alt="AML Dashboard"
+          style={{
+            position: 'absolute',
+            width: '631.15px',
+            height: '483.14px',
+            left: '0px',
+            top: '0px',
+            objectFit: 'cover',
+            objectPosition: 'top left',
+          }}
+        />
+      </div>
+    </div>
+
+    {/* Rectangle 80 — laptop base / chin bar */}
+    <div
+      style={{
+        position: 'absolute',
+        width: '765.94px',
+        height: '29.43px',
+        left: 'calc(50% - 382.97px)',
+        top: '431.99px',
+        background: 'linear-gradient(106.53deg, #00B4FD -5.68%, #003ACE 86.98%)',
+        opacity: 0.4,
+        boxShadow: '0px -12.6129px 12.6129px #000000',
+        borderRadius: '5.25537px 5.25537px 14.715px 14.715px',
+        border: '1px solid #00B4FD',
+      }}
+    />
+  </div>
+);
+
+/* ── Main Section ── */
 const CoreBankingSection = () => {
   return (
-    <section className="py-24 sm:py-32 relative overflow-hidden bg-background">
-      {/* Massive Faded Background Watermark corresponding to Section "3" in the N7 design */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-0">
-        <span 
-          className="text-[400px] sm:text-[600px] md:text-[800px] font-bold tracking-tighter leading-none"
-          style={{ 
-            color: 'transparent',
-            WebkitTextStroke: '2px rgba(255,255,255,0.02)' 
-          }}
-        >
-          3
-        </span>
+    <section
+      style={{
+        /* Frame 12: w:1440 h:619, bg:#000D12 */
+        width: '100%',
+        background: '#000D12',
+        position: 'relative',
+        overflow: 'hidden',
+        /* Enforce 619px height on desktop */
+      }}
+      className="h-auto lg:h-[619px]"
+    >
+      {/* ── "CB7" Watermark ──
+          Figma: position absolute, w:1141 h:687, left:-163.31px top:-2.25px
+          Archivo 500, 572.632px, opacity:0.5
+      */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          width: '1141px',
+          height: '687px',
+          left: '-163.31px',
+          top: '-2.25px',
+          fontFamily: 'Archivo, sans-serif',
+          fontWeight: 500,
+          fontSize: '572.632px',
+          lineHeight: '120%',
+          color: 'transparent',
+          WebkitTextStroke: '1px rgba(233,244,249,0.12)',
+          opacity: 0.5,
+          pointerEvents: 'none',
+          userSelect: 'none',
+          whiteSpace: 'nowrap',
+          zIndex: 0,
+          letterSpacing: '-0.02em',
+        }}
+      >
+        CB7
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-12 xl:gap-24">
-           
-           {/* Left Copy Container */}
-           <motion.div 
-             initial={{ opacity: 0, x: -30 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true, margin: "-100px" }}
-             transition={{ duration: 0.8 }}
-             className="w-full lg:w-5/12 flex flex-col items-start gap-8"
-           >
-              <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-serif text-white leading-tight tracking-tight">
-                A completely new built from core banking
+      {/* ── Top separator line ── */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '80%',
+          height: '1px',
+          background:
+            'linear-gradient(90deg, transparent, rgba(233,244,249,0.07), transparent)',
+        }}
+      />
+
+      {/* ══════════════════════════════════════════════
+          DESKTOP LAYOUT — absolute pixel-perfect
+          ══════════════════════════════════════════════ */}
+      <div className="hidden lg:block relative w-full h-full" style={{ minHeight: '619px' }}>
+
+        {/* ── Frame 93 — Left content column ──
+            Figma: absolute left:80px top:156.88px w:607.83 h:308
+        */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8 }}
+          style={{
+            position: 'absolute',
+            left: '80px',
+            top: '156.88px',
+            width: '607.83px',
+            height: '308px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            gap: '16px',
+            zIndex: 10,
+          }}
+        >
+          {/* Frame 92 — inner layout: gap 36px */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              gap: '36px',
+              width: '607.83px',
+            }}
+          >
+            {/* Frame 14 — text block: gap 16px */}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                gap: '16px',
+                width: '607.83px',
+              }}
+            >
+              {/* Heading */}
+              <h2
+                style={{
+                  width: '607.83px',
+                  fontFamily: 'Archivo, sans-serif',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  fontSize: '53px',
+                  lineHeight: '120%',
+                  letterSpacing: '-0.01em',
+                  color: '#E9F4F9',
+                  margin: 0,
+                }}
+              >
+                A complete cloud-based core banking.
               </h2>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
-                 <Button variant="primary" className="px-8 flex-shrink-0">
-                   Get Started
-                 </Button>
-                 <Button variant="ghost" className="px-8 border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-sm h-[48px] rounded-full text-text flex-shrink-0 group">
-                   View Demo
-                   <svg className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                 </Button>
-              </div>
-           </motion.div>
 
-           {/* Right Dashboard Composition overlapping image layers */}
-           <motion.div 
-             initial={{ opacity: 0, x: 30 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true, margin: "-100px" }}
-             transition={{ duration: 1 }}
-             className="w-full lg:w-7/12 relative flex items-center justify-center pt-10 pb-20 sm:pb-0"
-           >
-              {/* Background abstract decoration pattern vector */}
-              <img 
-                src={VectorGridDecoration} 
-                alt="Mesh decorative grid" 
-                className="absolute w-full h-[150%] max-w-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-10 mask-radial-faded pointer-events-none" 
-              />
-              
-              {/* Primary Background Dashboard Display Mockup */}
-              <motion.div 
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="relative z-20 w-[85%] md:w-3/4 max-w-xl bg-background/50 backdrop-blur rounded-2xl border border-white/10 shadow-2xl p-1 md:ml-auto"
+              {/* Subtitle */}
+              <p
+                style={{
+                  width: '327.19px',
+                  fontFamily: 'Archivo, sans-serif',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  fontSize: '16px',
+                  lineHeight: '130%',
+                  color: '#E9F4F9',
+                  opacity: 0.8,
+                  margin: 0,
+                }}
               >
-                  {/* Since image resolution can vary, object-cover and standardizing block helps shape it natively */}
-                  <img 
-                    src={TransactionHistoryScreen} 
-                    alt="Transaction History Global Interface" 
-                    className="w-full h-auto rounded-xl object-contain opacity-90"
-                    onError={(e) => {
-                       // Fallback UI block specifically if 1x1 base64 transparent pixel is loaded to still mock layout gracefully visually
-                       if(e.currentTarget.src.length < 200) e.currentTarget.classList.add("hidden"); 
-                    }} 
-                  />
-                  
-                  {/* Graceful Fallback if the image lacks data (e.g. 1x1 pixel scenario) */}
-                  <div className="absolute inset-0 bg-[#0A1017] rounded-xl flex flex-col justify-center items-center opacity-0 [img.hidden~&]:opacity-100 transition-opacity -z-10 text-white/20 font-bold p-8 text-center text-sm border border-white/5">
-                      Waiting for [TransactionHistoryScreen] true image payload
-                  </div>
+                Faster time to market with our cloud-based core banking services
+              </p>
+            </div>
 
-              </motion.div>
-              
-              {/* Overlapping Detail 'FloatingDashboardCard' Element */}
-              <motion.div 
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute left-0 sm:left-4 lg:-left-12 bottom-0 sm:-bottom-12 z-30 w-3/5 sm:w-1/2 max-w-[280px] rounded-3xl p-1 bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)]"
-              >
-                 <img 
-                    src={FloatingDashboardCard} 
-                    alt="Account Details Floater" 
-                    className="w-full h-auto rounded-2xl object-cover hover:opacity-100 opacity-90 transition-opacity duration-300"
-                    onError={(e) => {
-                       if(e.currentTarget.src.length < 200) e.currentTarget.classList.add("hidden"); 
-                    }}  
-                 />
-                 
-                  <div className="absolute inset-0 bg-[#0A1017] rounded-2xl flex flex-col justify-center items-center opacity-0 [img.hidden~&]:opacity-100 transition-opacity -z-10 text-white/20 font-bold p-4 text-center text-xs">
-                      Waiting for [FloatingDashboardCard]
-                  </div>
-              </motion.div>
-           </motion.div>
-           
-        </div>
+            {/* Frame 1 — REQUEST DEMO button */}
+            <motion.button
+              whileHover={{ opacity: 0.88 }}
+              whileTap={{ scale: 0.97 }}
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '15px 51px',
+                gap: '8px',
+                width: '210px',
+                height: '49px',
+                background: 'linear-gradient(106.53deg, #00B4FD -5.68%, #003ACE 86.98%)',
+                borderRadius: '10px',
+                border: 'none',
+                cursor: 'pointer',
+                /* Text */
+                fontFamily: 'Chivo Mono, monospace',
+                fontWeight: 400,
+                fontSize: '15px',
+                lineHeight: '130%',
+                textTransform: 'uppercase',
+                color: '#FFFFFF',
+                whiteSpace: 'nowrap',
+                transition: 'opacity 0.2s',
+              }}
+            >
+              REQUEST DEMO
+            </motion.button>
+          </div>
+
+          {/* Component 3 — Learn More link */}
+          <LearnMore />
+        </motion.div>
+
+        {/* ── Frame 90 — Right laptop mockup ──
+            Figma: absolute left:927px top:80.17px w:651.67 h:461.42
+        */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 1, delay: 0.2 }}
+          style={{
+            position: 'absolute',
+            left: '927px',
+            top: '80.17px',
+            width: '651.67px',
+            height: '461.42px',
+            zIndex: 10,
+          }}
+        >
+          <LaptopMockup />
+        </motion.div>
+      </div>
+
+      {/* ══════════════════════════════════════════════
+          MOBILE / TABLET LAYOUT — responsive stack
+          ══════════════════════════════════════════════ */}
+      <div className="lg:hidden relative z-10 px-6 py-16 flex flex-col gap-12">
+        {/* Left content */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '24px',
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: 'Archivo, sans-serif',
+              fontWeight: 400,
+              fontSize: 'clamp(32px, 6vw, 53px)',
+              lineHeight: '120%',
+              letterSpacing: '-0.01em',
+              color: '#E9F4F9',
+              margin: 0,
+            }}
+          >
+            A complete cloud-based core banking.
+          </h2>
+          <p
+            style={{
+              fontFamily: 'Archivo, sans-serif',
+              fontWeight: 400,
+              fontSize: '16px',
+              lineHeight: '130%',
+              color: '#E9F4F9',
+              opacity: 0.8,
+              margin: 0,
+              maxWidth: '327px',
+            }}
+          >
+            Faster time to market with our cloud-based core banking services
+          </p>
+          <button
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '210px',
+              height: '49px',
+              background: 'linear-gradient(106.53deg, #00B4FD -5.68%, #003ACE 86.98%)',
+              borderRadius: '10px',
+              border: 'none',
+              cursor: 'pointer',
+              fontFamily: 'Chivo Mono, monospace',
+              fontWeight: 400,
+              fontSize: '15px',
+              textTransform: 'uppercase',
+              color: '#FFFFFF',
+            }}
+          >
+            REQUEST DEMO
+          </button>
+          <LearnMore />
+        </motion.div>
+
+        {/* Mobile mockup — scaled down */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          style={{
+            transform: 'scale(0.55)',
+            transformOrigin: 'top center',
+            height: '260px',  /* collapsed height after scale */
+          }}
+        >
+          <LaptopMockup />
+        </motion.div>
       </div>
     </section>
   );

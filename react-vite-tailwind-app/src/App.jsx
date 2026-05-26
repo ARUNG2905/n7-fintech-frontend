@@ -1,10 +1,13 @@
 import React from 'react';
 import './styles/tailwind.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import FeaturesSection from './components/FeaturesSection';
+import SolutionsSection from './components/SolutionsSection';
 import CoreBankingSection from './components/CoreBankingSection';
+import PaperlessSection from './components/PaperlessSection';
+import TestimonialsSection from './components/TestimonialsSection';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -13,9 +16,12 @@ const App = () => {
         <Navbar />
         <main className="flex-1">
           <Hero />
-          <FeaturesSection />
+          <SolutionsSection />
           <CoreBankingSection />
+          <PaperlessSection />
+          <TestimonialsSection />
         </main>
+        <Footer />
       </div>
     </Router>
   );
