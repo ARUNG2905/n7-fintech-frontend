@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import SolutionsSection from './components/SolutionsSection';
 import CoreBankingSection from './components/CoreBankingSection';
 import PaperlessSection from './components/PaperlessSection';
+import InsightsSection from './components/InsightsSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import Footer from './components/Footer';
 
@@ -19,6 +20,7 @@ const App = () => {
           <SolutionsSection />
           <CoreBankingSection />
           <PaperlessSection />
+          <InsightsSection />
           <TestimonialsSection />
         </main>
         <Footer />
