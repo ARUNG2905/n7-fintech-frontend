@@ -75,228 +75,124 @@ const Hero = () => {
       style={{ background: '#000D12' }}
       className="relative w-full overflow-hidden"
     >
-      {/* Figma Desktop-1: w:1440px h:811px */}
-      <div style={{ height: '811px', position: 'relative' }}>
-        {/* ── Ellipse 1 gradient ── */}
-        <div
-          style={{
-            position: 'absolute',
-            width: '398.87px',
-            height: '398.87px',
-            right: '0',
-            top: '204px',
-            background: 'linear-gradient(103.43deg, #00B4FD -1.02%, #003ACE 83.53%)',
-            opacity: 0.5,
-            filter: 'blur(50px)',
-            pointerEvents: 'none',
-            zIndex: 0,
-          }}
-        />
+      {/* ── Ellipse 1 gradient ── */}
+      <div
+        className="absolute w-[200px] h-[200px] md:w-[398.87px] md:h-[398.87px] right-0 lg:right-0 top-1/4 lg:top-[204px] z-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(103.43deg, #00B4FD -1.02%, #003ACE 83.53%)',
+          opacity: 0.5,
+          filter: 'blur(50px)',
+        }}
+      />
 
-        <div
-          className="relative z-10 w-full max-w-[1440px] mx-auto"
-          style={{ position: 'relative', height: '100%' }}
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto min-h-[100vh] lg:min-h-[811px] px-6 lg:px-0 flex flex-col lg:block pt-32 lg:pt-0 pb-16 lg:pb-0">
+        
+        {/* ── LEFT COLUMN ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          className="flex flex-col gap-8 lg:gap-[52px] w-full lg:w-[607.83px] lg:absolute lg:left-[80px] lg:top-[211.96px] z-10"
         >
-          <div style={{ position: 'relative', height: '100%' }}>
-
-            {/* ── LEFT COLUMN ──
-                Figma: Frame 5 — w:607.83 h:319, left:80, top:211.96
-            */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9 }}
+          {/* Text Content */}
+          <div className="flex flex-col gap-4 lg:gap-[16px]">
+            <h1
               style={{
-                position: 'absolute',
-                left: '80px',
-                top: '211.96px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '52px',
-                width: '607.83px',
+                fontFamily: 'Archivo, sans-serif',
+                fontWeight: 500,
+                letterSpacing: '-0.01em',
+                color: '#E9F4F9',
               }}
+              className="text-4xl md:text-5xl lg:text-[67px] leading-[1.2] m-0 max-w-full lg:max-w-[608px]"
             >
-              {/* Frame 4: gap:16px */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                {/* H1 — Figma: Archivo 500 67px lh:120% ls:-0.01em color:#E9F4F9 */}
-                <h1
-                  style={{
-                    fontFamily: 'Archivo, sans-serif',
-                    fontWeight: 500,
-                    fontSize: '67px',
-                    lineHeight: '120%',
-                    letterSpacing: '-0.01em',
-                    color: '#E9F4F9',
-                    margin: 0,
-                    maxWidth: '608px',
-                  }}
-                >
-                  The new foundation of modern banking
-                </h1>
+              The new foundation of modern banking
+            </h1>
 
-                {/* Subtitle — Figma: Archivo 400 16px lh:130% color:#E9F4F9 opacity:0.8 w:356.17px */}
-                <p
-                  style={{
-                    fontFamily: 'Archivo, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '16px',
-                    lineHeight: '130%',
-                    color: '#E9F4F9',
-                    opacity: 0.8,
-                    maxWidth: '356px',
-                    margin: 0,
-                  }}
-                >
-                  We drive innovation and growth, provide seamless customer experience and operational excellence
-                </p>
-              </div>
-
-              {/* Frame 3: CTA Buttons — Figma: flex-row, gap:20px */}
-              <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', alignItems: 'center' }}>
-                <button
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '210px',
-                    height: '49px',
-                    padding: '15px 51px',
-                    background: 'linear-gradient(106.53deg, #00B4FD -5.68%, #003ACE 86.98%)',
-                    borderRadius: '10px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontFamily: 'Chivo Mono, monospace',
-                    fontWeight: 400,
-                    fontSize: '15px',
-                    lineHeight: '130%',
-                    textTransform: 'uppercase',
-                    color: '#FFFFFF',
-                    whiteSpace: 'nowrap',
-                    transition: 'opacity 0.2s',
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
-                  onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-                >
-                  Request Demo
-                </button>
-
-                <button
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '208px',
-                    height: '49px',
-                    padding: '15px 59px',
-                    background: 'transparent',
-                    borderRadius: '10px',
-                    border: '1px solid #E9F4F9',
-                    cursor: 'pointer',
-                    fontFamily: 'Chivo Mono, monospace',
-                    fontWeight: 400,
-                    fontSize: '15px',
-                    lineHeight: '130%',
-                    textTransform: 'uppercase',
-                    color: '#E9F4F9',
-                    whiteSpace: 'nowrap',
-                    transition: 'background 0.2s',
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.background = 'rgba(233,244,249,0.07)'}
-                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-                >
-                  Contact Us
-                </button>
-              </div>
-
-              {/* Frame 75: Trusted By */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div
-                  style={{
-                    fontFamily: 'Archivo, sans-serif',
-                    fontWeight: 500,
-                    fontSize: '16px',
-                    lineHeight: '130%',
-                    textTransform: 'capitalize',
-                    color: '#E9F4F9',
-                    opacity: 0.7,
-                  }}
-                >
-                  trusted by:
-                </div>
-
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
-                    gap: '18.4px',
-                    opacity: 0.9,
-                  }}
-                >
-                  {logos.map((logo) => (
-                    <div
-                      key={logo.label}
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '4.6px',
-                      }}
-                    >
-                      <LogoIcon name={logo.icon} />
-                      <span
-                        style={{
-                          fontFamily: 'Roboto, sans-serif',
-                          fontWeight: 700,
-                          fontSize: '13.8px',
-                          lineHeight: '110%',
-                          color: '#586E84',
-                          display: 'flex',
-                          alignItems: 'center',
-                        }}
-                      >
-                        {logo.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-            {/* ── RIGHT COLUMN ──
-                Figma: Frame 114 — w:562 h:301, left:818, top:calc(50%–301/2)
-                NOW USING THE ACTUAL EXPORTED Frame-114.png IMAGE
-            */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="hidden lg:block"
+            <p
               style={{
-                position: 'absolute',
-                left: '818px',
-                top: 'calc(50% - 301px/2)',
-                width: '562px',
-                height: '301px',
+                fontFamily: 'Archivo, sans-serif',
+                fontWeight: 400,
+                color: '#E9F4F9',
               }}
+              className="text-base lg:text-[16px] leading-[1.3] opacity-80 max-w-full lg:max-w-[356px] m-0"
             >
-              {/* Single exported image replaces all hardcoded photo + floating cards */}
-              <img
-                src="/n7-assets/Frame-114.png"
-                alt="N7 Banking App - Dashboard with Total Balance, Recent Activity, and Fund Transfer features"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain',
-                  display: 'block',
-                }}
-              />
-            </motion.div>
-
+              We drive innovation and growth, provide seamless customer experience and operational excellence
+            </p>
           </div>
-        </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 lg:gap-[20px] items-start sm:items-center w-full">
+            <button
+              style={{
+                background: 'linear-gradient(106.53deg, #00B4FD -5.68%, #003ACE 86.98%)',
+                fontFamily: 'Chivo Mono, monospace',
+              }}
+              className="flex items-center justify-center w-full sm:w-[210px] h-[49px] px-[51px] py-[15px] rounded-[10px] border-none cursor-pointer font-normal text-[15px] leading-[1.3] uppercase text-white whitespace-nowrap transition-opacity hover:opacity-85"
+            >
+              Request Demo
+            </button>
+
+            <button
+              style={{
+                background: 'transparent',
+                border: '1px solid #E9F4F9',
+                fontFamily: 'Chivo Mono, monospace',
+              }}
+              className="flex items-center justify-center w-full sm:w-[208px] h-[49px] px-[59px] py-[15px] rounded-[10px] cursor-pointer font-normal text-[15px] leading-[1.3] uppercase text-[#E9F4F9] whitespace-nowrap transition-colors hover:bg-white/5"
+            >
+              Contact Us
+            </button>
+          </div>
+
+          {/* Trusted By */}
+          <div className="flex flex-col gap-4 lg:gap-[16px]">
+            <div
+              style={{
+                fontFamily: 'Archivo, sans-serif',
+                fontWeight: 500,
+              }}
+              className="text-[16px] leading-[1.3] capitalize text-[#E9F4F9] opacity-70"
+            >
+              trusted by:
+            </div>
+
+            <div className="flex flex-row items-center flex-wrap gap-4 lg:gap-[18.4px] opacity-90">
+              {logos.map((logo) => (
+                <div
+                  key={logo.label}
+                  className="flex flex-row items-center justify-center gap-1.5 lg:gap-[4.6px]"
+                >
+                  <LogoIcon name={logo.icon} />
+                  <span
+                    style={{
+                      fontFamily: 'Roboto, sans-serif',
+                      fontWeight: 700,
+                      color: '#586E84',
+                    }}
+                    className="text-xs lg:text-[13.8px] leading-[1.1] flex items-center"
+                  >
+                    {logo.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ── RIGHT COLUMN ── */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="w-full mt-12 lg:mt-0 lg:absolute lg:left-[818px] lg:top-[255px] lg:w-[562px] lg:h-[301px] z-10"
+        >
+          <img
+            src="/n7-assets/Frame-114.png"
+            alt="N7 Banking App - Dashboard with Total Balance, Recent Activity, and Fund Transfer features"
+            className="w-full h-auto lg:w-full lg:h-full object-contain mx-auto"
+          />
+        </motion.div>
+
       </div>
     </section>
   );
