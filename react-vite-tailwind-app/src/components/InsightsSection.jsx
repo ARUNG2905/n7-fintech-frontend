@@ -1,55 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Custom clean SVG vector graphic elements inside the top card (representing Frame 55's four vector shapes)
+// Uses actual Figma-exported vector PNG assets for the top insight card graphic
 const VectorGraphicGrid = () => {
   return (
-    <div className="grid grid-cols-2 gap-4 w-full h-full p-2 items-center justify-items-center">
-      {/* Vector 1: Node Connection */}
-      <motion.div
-        whileHover={{ scale: 1.1, rotate: 5 }}
-        className="w-[90px] h-[90px] rounded-xl bg-[#00B4FD]/10 border border-[#00B4FD]/30 flex items-center justify-center relative overflow-hidden group/vector"
-      >
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#00B4FD]/20 to-transparent opacity-0 group-hover/vector:opacity-100 transition-opacity" />
-        <svg className="w-10 h-10 text-[#00B4FD]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <circle cx="12" cy="5" r="3" />
-          <circle cx="5" cy="19" r="3" />
-          <circle cx="19" cy="19" r="3" />
-          <path d="M12 8v8M7.5 17h9M12 12l-4.5 5M12 12l4.5 5" />
-        </svg>
+    <div className="grid grid-cols-2 gap-5 w-full h-full p-4 items-center justify-items-center">
+      <motion.div whileHover={{ scale: 1.08 }} className="w-[100px] h-[100px] flex items-center justify-center">
+        <img src="/n7-assets/Vector-12.png" alt="" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
       </motion.div>
-
-      {/* Vector 2: Growth Analytics */}
-      <motion.div
-        whileHover={{ scale: 1.1, rotate: -5 }}
-        className="w-[90px] h-[90px] rounded-xl bg-[#00B4FD]/10 border border-[#00B4FD]/30 flex items-center justify-center relative overflow-hidden group/vector"
-      >
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#00B4FD]/20 to-transparent opacity-0 group-hover/vector:opacity-100 transition-opacity" />
-        <svg className="w-10 h-10 text-[#00B4FD]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
+      <motion.div whileHover={{ scale: 1.08 }} className="w-[100px] h-[100px] flex items-center justify-center">
+        <img src="/n7-assets/Vector-13.png" alt="" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
       </motion.div>
-
-      {/* Vector 3: Security Shield */}
-      <motion.div
-        whileHover={{ scale: 1.1, rotate: 5 }}
-        className="w-[90px] h-[90px] rounded-xl bg-[#00B4FD]/10 border border-[#00B4FD]/30 flex items-center justify-center relative overflow-hidden group/vector"
-      >
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#00B4FD]/20 to-transparent opacity-0 group-hover/vector:opacity-100 transition-opacity" />
-        <svg className="w-10 h-10 text-[#00B4FD]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
+      <motion.div whileHover={{ scale: 1.08 }} className="w-[100px] h-[100px] flex items-center justify-center">
+        <img src="/n7-assets/Vector-14.png" alt="" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
       </motion.div>
-
-      {/* Vector 4: Database / Cloud Stack */}
-      <motion.div
-        whileHover={{ scale: 1.1, rotate: -5 }}
-        className="w-[90px] h-[90px] rounded-xl bg-[#00B4FD]/10 border border-[#00B4FD]/30 flex items-center justify-center relative overflow-hidden group/vector"
-      >
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#00B4FD]/20 to-transparent opacity-0 group-hover/vector:opacity-100 transition-opacity" />
-        <svg className="w-10 h-10 text-[#00B4FD]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-        </svg>
+      <motion.div whileHover={{ scale: 1.08 }} className="w-[100px] h-[100px] flex items-center justify-center">
+        <img src="/n7-assets/Vector-15.png" alt="" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
       </motion.div>
     </div>
   );

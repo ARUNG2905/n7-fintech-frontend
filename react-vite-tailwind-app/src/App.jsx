@@ -6,7 +6,7 @@ import CoreBankingSection from './components/CoreBankingSection';
 import CoreBankingDetailsSection from './components/CoreBankingDetailsSection';
 import PaperlessSection from './components/PaperlessSection';
 import InsightsSection from './components/InsightsSection';
-import TestimonialsSection from './components/TestimonialsSection';
+import CaseStudiesSection from './components/CaseStudiesSection';
 import Footer from './components/Footer';
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
         <CoreBankingDetailsSection />
         <PaperlessSection />
         <InsightsSection />
-        <TestimonialsSection />
+        <CaseStudiesSection />
       </main>
       <Footer />
     </div>
