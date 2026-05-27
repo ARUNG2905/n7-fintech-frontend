@@ -21,45 +21,45 @@ const LogoIcon = ({ name }) => {
     case 'shells':
       return (
         <svg width="18" height="19" viewBox="0 0 18 19" style={s}>
-          <path d="M9 1C4.58 1 1 4.58 1 9s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14.4A6.4 6.4 0 012.6 9 6.4 6.4 0 019 2.6a6.37 6.37 0 014.8 2.18l-1.6-2.76c-.07-.11-.2-.18-.33-.15-.37.07-.74.21-1.08.4C9.69 3.09 9 4.17 8.92 5.49A1.6 1.6 0 017.36 6.94H6.8c-.44 0-.8-.36-.8-.8v-1.6c0-1.77 1.43-3.2 3.2-3.2 1.07 0 2.02.53 2.6 1.34A6.39 6.39 0 013 9c0 1.78.84 3.37 2.14 4.38l1.33-4.1c.25-.4.82-.39 1.07.02l1.89 3.2A6.37 6.37 0 019 12.8a4.8 4.8 0 010-9.6z"/>
+          <path d="M9 1C4.58 1 1 4.58 1 9s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14.4A6.4 6.4 0 012.6 9 6.4 6.4 0 019 2.6a6.37 6.37 0 014.8 2.18l-1.6-2.76c-.07-.11-.2-.18-.33-.15-.37.07-.74.21-1.08.4C9.69 3.09 9 4.17 8.92 5.49A1.6 1.6 0 017.36 6.94H6.8c-.44 0-.8-.36-.8-.8v-1.6c0-1.77 1.43-3.2 3.2-3.2 1.07 0 2.02.53 2.6 1.34A6.39 6.39 0 013 9c0 1.78.84 3.37 2.14 4.38l1.33-4.1c.25-.4.82-.39 1.07.02l1.89 3.2A6.37 6.37 0 019 12.8a4.8 4.8 0 010-9.6z" />
         </svg>
       );
     case 'smartfinder':
       return (
         <svg width="19" height="19" viewBox="0 0 19 19" style={s}>
-          <rect x="1" y="1" width="17" height="17" rx="2" fill="none" stroke="#586E84" strokeWidth="1.5"/>
-          <circle cx="8" cy="8" r="3.5" fill="none" stroke="#586E84" strokeWidth="1.5"/>
-          <line x1="11" y1="11" x2="15" y2="15" stroke="#586E84" strokeWidth="1.5" strokeLinecap="round"/>
+          <rect x="1" y="1" width="17" height="17" rx="2" fill="none" stroke="#586E84" strokeWidth="1.5" />
+          <circle cx="8" cy="8" r="3.5" fill="none" stroke="#586E84" strokeWidth="1.5" />
+          <line x1="11" y1="11" x2="15" y2="15" stroke="#586E84" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       );
     case 'zoomerr':
       return (
         <svg width="19" height="19" viewBox="0 0 19 19" style={s}>
-          <circle cx="9.5" cy="9.5" r="8" fill="none" stroke="#586E84" strokeWidth="1.5"/>
-          <polygon points="9.5,4 14,14 5,14" fill="#586E84"/>
+          <circle cx="9.5" cy="9.5" r="8" fill="none" stroke="#586E84" strokeWidth="1.5" />
+          <polygon points="9.5,4 14,14 5,14" fill="#586E84" />
         </svg>
       );
     case 'artvenue':
       return (
         <svg width="14" height="17" viewBox="0 0 14 17" fill="none">
-          <rect x="1" y="1" width="3.5" height="15" rx="1" fill="#586E84"/>
-          <rect x="5.25" y="3" width="3.5" height="13" rx="1" fill="#586E84"/>
-          <rect x="9.5" y="5" width="3.5" height="11" rx="1" fill="#586E84"/>
+          <rect x="1" y="1" width="3.5" height="15" rx="1" fill="#586E84" />
+          <rect x="5.25" y="3" width="3.5" height="13" rx="1" fill="#586E84" />
+          <rect x="9.5" y="5" width="3.5" height="11" rx="1" fill="#586E84" />
         </svg>
       );
     case 'kontrastr':
       return (
         <svg width="13" height="19" viewBox="0 0 13 19" style={s}>
-          <path d="M0 0h6.5v19H0zM6.5 9.5l6 9.5H6.5V9.5zM6.5 9.5V0l6 9.5H6.5z"/>
+          <path d="M0 0h6.5v19H0zM6.5 9.5l6 9.5H6.5V9.5zM6.5 9.5V0l6 9.5H6.5z" />
         </svg>
       );
     case 'waves':
     default:
       return (
         <svg width="12" height="19" viewBox="0 0 12 19" style={s}>
-          <rect x="0" y="0" width="3" height="19" rx="1.5"/>
-          <rect x="4.5" y="4" width="3" height="15" rx="1.5"/>
-          <rect x="9" y="8" width="3" height="11" rx="1.5"/>
+          <rect x="0" y="0" width="3" height="19" rx="1.5" />
+          <rect x="4.5" y="4" width="3" height="15" rx="1.5" />
+          <rect x="9" y="8" width="3" height="11" rx="1.5" />
         </svg>
       );
   }
@@ -269,7 +269,7 @@ const TotalBalanceCard = () => {
       label: 'Fund Transfer',
       icon: (
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D0D0C" strokeWidth="1.5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
         </svg>
       ),
     },
@@ -277,8 +277,8 @@ const TotalBalanceCard = () => {
       label: 'Add Money',
       icon: (
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D0D0C" strokeWidth="1.5">
-          <circle cx="12" cy="12" r="10"/>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v8m-4-4h8"/>
+          <circle cx="12" cy="12" r="10" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v8m-4-4h8" />
         </svg>
       ),
     },
@@ -286,10 +286,10 @@ const TotalBalanceCard = () => {
       label: 'More',
       icon: (
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D0D0C" strokeWidth="1.5">
-          <rect x="3" y="3" width="7" height="7" rx="1"/>
-          <rect x="14" y="3" width="7" height="7" rx="1"/>
-          <rect x="3" y="14" width="7" height="7" rx="1"/>
-          <rect x="14" y="14" width="7" height="7" rx="1"/>
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
         </svg>
       ),
     },
@@ -385,7 +385,7 @@ const TotalBalanceCard = () => {
             }}
           >
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0D0D0C" strokeWidth="1.8">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
             </svg>
           </div>
         </div>
